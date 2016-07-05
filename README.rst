@@ -1,11 +1,10 @@
-#####################
 Container build files
 #####################
 
 Docker
 ======
 
-alpine-jupyter-py3-minimal
+alpine-jupyter-minimal-py3
 --------------------------
 
 Very minimal, ephemeral and insecure Jupyter Notebook server deployment,
@@ -38,5 +37,7 @@ TODO
 
 - add versions with both Python2 and Python3
 - secure the server
+
   - passwords
   - SSL/certs
+  - ?non-root user
