@@ -1,18 +1,18 @@
 Container build files
-#####################
+=====================
 
 Docker
-======
+------
 
 alpine-jupyter-minimal-py3
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Very minimal, ephemeral and insecure Jupyter Notebook server deployment,
 Python3-based.
 Only Python stdlib and ``notebook`` package with dependencies are installed.
 
 TODO
-----
+~~~~
 
 - more thorough cleaning of packages needed only during build
 - mount local user storage with notebooks
