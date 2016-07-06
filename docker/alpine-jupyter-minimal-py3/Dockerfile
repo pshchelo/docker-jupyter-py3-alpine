@@ -7,6 +7,7 @@ MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 # - install build dependencies
 # - hack for compilation to succeed on Alpine
 # - install Python packages
+# - enable IPython Widgets for Notebooks
 # - cleanup build dependencies
 # - make directory for user notebooks
 RUN apk update \
@@ -22,7 +23,10 @@ RUN apk update \
     python3-dev \
 && ln -s /usr/include/locale.h /usr/include/xlocale.h \
 && python3 -m pip --no-cache-dir install \
+    ipywidgets \
     notebook \
+    requests \
+&& jupyter nbextension enable --py widgetsnbextension \
 && apk del --purge -r build_dependencies \
 && rm -rf /var/cache/apk/* \
 && mkdir /notebooks

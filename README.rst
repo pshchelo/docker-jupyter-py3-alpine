@@ -4,21 +4,35 @@ Docker files
 alpine-jupyter-minimal-py3
 --------------------------
 
-Very minimal, ephemeral and insecure Jupyter Notebook server deployment,
-Python3-based.
-Only Python stdlib and ``notebook`` package with dependencies are installed.
+Basic insecure single user Jupyter Notebook server deployment, Python3-based.
+Apart from Python stdlib following Python packages are installed:
+
+- notebook
+- ipywidgets
+- requests
+
+This makes this image already useful for teaching/showcasing
+and some development around Web APIs.
+
+You can plug your own persistent notebooks as volume to ``/notebooks`` mount.
+Example start of container::
+
+    docker run -d \
+        --name jupyter \
+        -p 8888:8888 \
+        -v ${PWD}:/notebooks \
+        pshchelo/alpine-jupyter-minimal-py3
+
 
 TODO
 ----
 
-- better startup behavior, handle signals
-- add more general purpose or Jupyter-specific Python packages
+- better startup/shutdown behavior, handle signals and arguments
 
-  - ?requests
-  - ?ipywidgets
-  - ?local MathJax
+  - dedicated startup script?
+  - move default settings to jupyter config file?
 
-- ``alpine-jupyter-py3-sci`` - add more of Python scientific stack packages
+- ``alpine-jupyter-sci-py3`` - add more of Python scientific stack packages
 
   - numpy
   - pandas
@@ -29,10 +43,3 @@ TODO
   - ?Cython
   - ?plotly
   - ?quandl
-
-- add versions with both Python2 and Python3
-- secure the server
-
-  - passwords
-  - SSL/certs
-  - ?non-root user
