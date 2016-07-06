@@ -12,6 +12,7 @@ MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 # - make directory for user notebooks
 RUN apk update \
 && apk add \
+    ca-certificates \ 
     libstdc++ \
     python3 \
 && apk add --virtual=build_dependencies \
