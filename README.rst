@@ -1,26 +1,22 @@
-Container build files
-=====================
-
-Docker
-------
+Docker files
+============
 
 alpine-jupyter-minimal-py3
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Very minimal, ephemeral and insecure Jupyter Notebook server deployment,
 Python3-based.
 Only Python stdlib and ``notebook`` package with dependencies are installed.
 
 TODO
-~~~~
+----
 
-- more thorough cleaning of packages needed only during build
-- mount local user storage with notebooks
+- better startup behavior, handle signals
 - add more general purpose or Jupyter-specific Python packages
 
   - ?requests
   - ?ipywidgets
-  - ???
+  - ?local MathJax
 
 - ``alpine-jupyter-py3-sci`` - add more of Python scientific stack packages
 
@@ -31,7 +27,6 @@ TODO
   - sympy
   - networkx
   - ?Cython
-  - ?local MathJax
   - ?plotly
   - ?quandl
 
