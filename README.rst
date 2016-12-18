@@ -21,6 +21,16 @@ Extending image at run-time
 
 alpine-jupyter-minimal-py3
 --------------------------
+.. image:: https://img.shields.io/docker/stars/pshchelo/alpine-jupyter-minimal-py3.svg
+   :target: `alpine-jupyter-minimal-py3_dockerhub`_
+
+.. image:: https://img.shields.io/docker/pulls/pshchelo/alpine-jupyter-minimal-py3.svg
+   :target: `alpine-jupyter-minimal-py3_dockerhub`_
+
+.. image:: https://img.shields.io/docker/automated/pshchelo/alpine-jupyter-minimal-py3.svg
+   :target: `alpine-jupyter-minimal-py3_dockerhub`_
+
+.. _alpine-jupyter-minimal-py3_dockerhub: https://hub.docker.com/r/pshchelo/alpine-jupyter-minimal-py3/
 
 Basic insecure single user Jupyter Notebook server deployment, Python3-based.
 Apart from Python stdlib following Python packages are installed:
@@ -34,6 +44,16 @@ and some development around Web APIs.
 
 alpine-jupyter-sci-py3
 ----------------------
+.. image:: https://img.shields.io/docker/stars/pshchelo/alpine-jupyter-sci-py3.svg
+   :target: `alpine-jupyter-sci-py3_dockerhub`_
+
+.. image:: https://img.shields.io/docker/pulls/pshchelo/alpine-jupyter-sci-py3.svg
+   :target: `alpine-jupyter-sci-py3_dockerhub`_
+
+.. image:: https://img.shields.io/docker/automated/pshchelo/alpine-jupyter-sci-py3.svg
+   :target: `alpine-jupyter-sci-py3_dockerhub`_
+
+.. _alpine-jupyter-sci-py3_dockerhub: https://hub.docker.com/r/pshchelo/alpine-jupyter-sci-py3/
 
 In addition to the minimal install, next scientific Python packages are added:
 
