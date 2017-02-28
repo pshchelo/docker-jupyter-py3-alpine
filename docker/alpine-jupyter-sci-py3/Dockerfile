@@ -15,6 +15,7 @@ RUN apk update \
     ca-certificates \
     libstdc++ \
     python3 \
+    pandoc \
 && apk add --virtual=build_dependencies \
     cmake \
     gcc \
