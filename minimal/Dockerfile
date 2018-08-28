@@ -30,7 +30,7 @@ RUN apk update \
     ipywidgets \
     notebook \
     requests \
-    EXTRAPIP \
+    ${EXTRAPIP} \
 && jupyter nbextension enable --py widgetsnbextension \
 && apk del --purge -r build_dependencies \
 && rm -rf /var/cache/apk/* \
