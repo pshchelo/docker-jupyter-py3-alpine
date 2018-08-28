@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+docker build --build-arg EXTRAPIP='cufflinks networkx numpy pandas plotly sympy' -t $IMAGE_NAME .

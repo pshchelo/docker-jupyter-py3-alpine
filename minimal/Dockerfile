@@ -3,6 +3,9 @@
 FROM alpine:latest
 MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 
+# Add extra pip packages to install with
+# docker build --build-arg EXTRAPIP='pkg1 pkg2 ...'
+ARG EXTRAPIP=''
 # - install Python3 and runtime dependencies,
 # - install build dependencies
 # - hack for compilation to succeed on Alpine
@@ -12,7 +15,7 @@ MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 # - make directory for user notebooks
 RUN apk update \
 && apk add \
-    ca-certificates \ 
+    ca-certificates \
     libstdc++ \
     python3 \
 && apk add --virtual=build_dependencies \
@@ -27,6 +30,7 @@ RUN apk update \
     ipywidgets \
     notebook \
     requests \
+    EXTRAPIP \
 && jupyter nbextension enable --py widgetsnbextension \
 && apk del --purge -r build_dependencies \
 && rm -rf /var/cache/apk/* \
