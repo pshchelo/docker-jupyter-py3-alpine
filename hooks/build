@@ -1,0 +1,8 @@
+#!/bin/bash
+
+build_args=""
+
+if [[ -n $REQ_FILE ]]; then
+    build_args+="--build-arg REQ_FILE=$REQ_FILE"
+fi
+docker build $build_args -t $IMAGE_NAME .

@@ -3,9 +3,10 @@
 FROM alpine:latest
 MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 
-# Add extra pip packages to install with
-# docker build --build-arg EXTRAPIP='pkg1 pkg2 ...'
-ARG EXTRAPIP=''
+# Build scientific version via
+# docker build --build-arg REQ_FILE=sci-requirements.txt .
+ARG REQ_FILE='requirements.txt'
+ADD ${REQ_FILE} /tmp/${REQ_FILE}
 # - install Python3 and runtime dependencies,
 # - install build dependencies
 # - hack for compilation to succeed on Alpine
@@ -26,16 +27,12 @@ RUN apk update \
     musl-dev \
     python3-dev \
 && ln -s /usr/include/locale.h /usr/include/xlocale.h \
-&& python3 -m pip --no-cache-dir install \
-    ipywidgets \
-    notebook \
-    requests \
-    ${EXTRAPIP} \
+&& python3 -m pip --no-cache-dir install -r /tmp/${REQ_FILE} \
 && jupyter nbextension enable --py widgetsnbextension \
 && apk del --purge -r build_dependencies \
 && rm -rf /var/cache/apk/* \
 && mkdir /notebooks
 
 VOLUME /notebooks
-ENTRYPOINT /usr/bin/jupyter-notebook --no-browser --ip=0.0.0.0 --notebook-dir=/notebooks
+ENTRYPOINT /usr/bin/jupyter-notebook --no-browser --ip=0.0.0.0 --notebook-dir=/notebooks --allow-root
 EXPOSE 8888

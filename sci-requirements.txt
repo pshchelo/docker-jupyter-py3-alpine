@@ -1,0 +1,11 @@
+# base requirements
+requests
+notebook
+ipywidgets
+# scientific requirements
+cufflinks
+networkx
+numpy
+pandas
+plotly
+sympy

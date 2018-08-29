@@ -1,0 +1,4 @@
+#base requirements
+requests
+notebook
+ipywidgets
