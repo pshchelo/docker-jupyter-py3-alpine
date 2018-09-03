@@ -6,7 +6,7 @@ MAINTAINER Pavlo Shchelokovskyy (shchelokovskyy@gmail.com)
 # Build scientific version via
 # docker build --build-arg REQ_FILE=sci-requirements.txt .
 ARG REQ_FILE='requirements.txt'
-ADD ${REQ_FILE} /tmp/${REQ_FILE}
+COPY ${REQ_FILE} /tmp/${REQ_FILE}
 # - install Python3 and runtime dependencies,
 # - install build dependencies
 # - hack for compilation to succeed on Alpine
@@ -33,6 +33,7 @@ RUN apk update \
 && rm -rf /var/cache/apk/* \
 && mkdir /notebooks
 
+COPY jupyter_notebook_config.json /root/.jupyter/
 VOLUME /notebooks
-ENTRYPOINT /usr/bin/jupyter-notebook --no-browser --ip=0.0.0.0 --notebook-dir=/notebooks --allow-root
+ENTRYPOINT /usr/bin/jupyter-notebook
 EXPOSE 8888

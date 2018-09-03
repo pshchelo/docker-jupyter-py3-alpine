@@ -1,5 +1,5 @@
-Docker files
-============
+Jupyter notebook based on Alpine docker image
+=============================================
 
 Standard Jupyter port 8888 is exposed, map it to your local port.
 You can plug your own persistent notebooks as volume to ``/notebooks`` mount.
@@ -33,6 +33,9 @@ alpine-jupyter-minimal-py3
 .. _alpine-jupyter-minimal-py3_dockerhub: https://hub.docker.com/r/pshchelo/alpine-jupyter-minimal-py3/
 
 Basic insecure single user Jupyter Notebook server deployment, Python3-based.
+
+**HARDCODED PASSWORD IS** ``jupyter``
+
 Apart from Python stdlib following Python packages are installed:
 
 - notebook
@@ -66,11 +69,3 @@ In addition to the minimal install, next scientific Python packages are added:
 
 ``matplotlib``, ``scipy`` and scikits will be added later
 as they require non-trivial build dependencies
-
-TODO
-----
-
-- better startup/shutdown behavior, handle signals and arguments
-
-  - dedicated startup script?
-  - move default settings to jupyter config file?

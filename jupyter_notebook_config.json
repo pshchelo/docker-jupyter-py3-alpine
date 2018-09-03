@@ -1,0 +1,10 @@
+{
+  "NotebookApp": {
+    "allow_root": true,
+    "notebook_dir": "/notebooks",
+    "open_browser": false,
+    "ip": "0.0.0.0",
+    "port": 8888,
+    "password": "sha1:2c69a489562f:e2a07aabc41a6a96b3784901aabbbb4abffeed7b"
+  }
+}
